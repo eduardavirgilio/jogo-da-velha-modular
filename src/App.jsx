@@ -6,6 +6,7 @@ export default function App() {
 
   return (
     <div>
+      <h1>Jogo da Velha</h1>
       <Game/>
     </div>
   )
