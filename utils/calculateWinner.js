@@ -1,4 +1,7 @@
+ // função que determina se tem um vencedor no jogo da velha com base no estado atual do tabuleiro
+ 
  export default function calculateWinner(squares) {
+  // define todas as combinações possíveis de três casas que resultam em uma vitória e retorna o vencedor se houver
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
