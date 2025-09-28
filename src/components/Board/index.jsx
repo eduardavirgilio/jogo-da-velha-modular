@@ -1,21 +1,26 @@
+// função que renderiza o estado atual do jogo e gerencia os cliques nos botões
+
 import calculateWinner from "../../../utils/calculateWINNER.js";
 import Square from "../Square";
-// import styles from '../Board/Board.module.css';
 
 export default function Board({ xIsNext, squares, onPlay }) {
+  // função para o clique em um botao
   function handleClick(i) {
+    // verifica se já tem um vencedor ou se a casa já está preenchida, caso sim, ignora o clique
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
+    // determina se 'X' ou 'O' vai ser colocado no botao clicado
     const nextSquares = squares.slice();
     if (xIsNext) {
       nextSquares[i] = 'X';
     } else {
       nextSquares[i] = 'O';
     }
-    onPlay(nextSquares);
+    onPlay(nextSquares); // atualiza o estado do jogo
   }
 
+  // verifica se tem um vencedor e define a mensagem
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
@@ -24,6 +29,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
+   // renderiza o componente organizados em linhas.
   return (
     <>
       <div className="status">{status}</div>
