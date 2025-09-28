@@ -26,7 +26,7 @@ Uma função que recebe o array do tabuleiro (`squares`) e retorna o símbolo do
 
 ---
 
-## ▶️ Primeiros Passos para executar o projeto
+## Primeiros Passos para executar o projeto
 
 1.  Clone o repositório.
 2.  Instale as dependências:
@@ -35,5 +35,5 @@ Uma função que recebe o array do tabuleiro (`squares`) e retorna o símbolo do
     ```
 3.  Execute o projeto:
     ```bash
-    npm start
+    npm run dev
     ```
